@@ -315,6 +315,16 @@ los server components pueden ser asyncronos
 
 
 
+ROUTING DINAMICO EN NEXT.JS
+
+Es cuando la URL tiene un valor que cambia — un ID, un slug, un nombre. En lugar de crear un archivo por cada valor posible, creas uno solo con corchetes:
+app/categoria/[slug]/page.tsx  ← Un archivo, infinitas URLs
+Eso cubre:
+/categoria/hamburguesas
+/categoria/bebidas
+/categoria/postres
+
+
 
 
 
