@@ -1,12 +1,14 @@
 import { Product } from "@/src/generated/prisma"
 import { formatCurrency } from "@/src/utils"
 import Image from "next/image"
+import AddProductButton from "./AddProductButton"
 
 type ProducCardProps = {
     product : Product
 }
 
 export default function ProductCard({product} : ProducCardProps) {
+
   return (
     <div className="border bg-white ">
 
@@ -15,7 +17,6 @@ export default function ProductCard({product} : ProducCardProps) {
         height={500}
         src={`/products/${product.image}.jpg`}
         alt={`Imagen platillo ${product.name} `}
-        quality={75}
         >
 
 
@@ -26,6 +27,7 @@ export default function ProductCard({product} : ProducCardProps) {
             <p className="mt-5 font-black text-4xl text-amber-500">
                 {formatCurrency(product.price)}
             </p>
+           <AddProductButton product={product} />
         </div>
 
     </div>

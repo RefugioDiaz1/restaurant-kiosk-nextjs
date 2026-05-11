@@ -325,8 +325,14 @@ Eso cubre:
 /categoria/postres
 
 
+SE INSTALA ZUSTAND PARA EL ESTADO GLOBAL DEL CARRITO
+
+npm i zustand
+
+solo funciona en cliente no en el server
 
 
+se instalan algunas dependencias de icon
 
-
+npm i @heroicons/react
 
