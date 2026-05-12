@@ -336,3 +336,30 @@ se instalan algunas dependencias de icon
 
 npm i @heroicons/react
 
+
+
+SERVER ACTIONS
+
+solo disponibles en App Router
+en lo nuevo de next.js
+
+son funciones asyncronas se ejecutan en el server, se utlizan con clientes de componentes y servidor
+
+se utilizan para crear datos o mutarlos y estan muy unidos al CRUD
+
+utilizan la directiva user server
+
+los server actions, debe estar dentro del atributo action={} de un <form>
+
+tambien pueden ser llamados dentro de useEffect o al presionar un boton
+
+no son exclusivos de next.js
+
+se agrega zod
+
+npm i zod
+
+instalar toastify
+
+npm i react-toastify
+

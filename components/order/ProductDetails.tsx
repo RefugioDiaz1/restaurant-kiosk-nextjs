@@ -1,12 +1,23 @@
 import {XCircleIcon,MinusIcon, PlusIcon} from '@heroicons/react/24/outline'
 import { OrderItem } from "@/src/types"
 import { formatCurrency } from '@/src/utils'
+import { useStore } from '@/src/store'
+import { useMemo } from 'react'
 
 type ProductDetailsProps = {
     item: OrderItem
 }
 
+const MIN_ITEMS = 1
+const MAX_ITEMS = 5
+
 export default function ProductDetails({item}:ProductDetailsProps) {
+
+  const {increaseQuantity, decreaseQuantity, removeItem} = useStore()
+
+  const desableDecreaseButton = useMemo(()=> item.quantity <= MIN_ITEMS, [item])
+  const desableInCreaseButton = useMemo(()=> item.quantity >= MAX_ITEMS, [item])
+
   return (
     <div className="shadow space-y-1 p-4 bg-white  border-t border-gray-200 ">
   <div className="space-y-4">
@@ -15,7 +26,7 @@ export default function ProductDetails({item}:ProductDetailsProps) {
         
         <button
           type="button"
-          onClick={() => {}}
+          onClick={() => removeItem(item.id)}
         >
           <XCircleIcon className="text-red-600 h-8 w-8"/>
         </button>
@@ -26,7 +37,9 @@ export default function ProductDetails({item}:ProductDetailsProps) {
     <div className="flex gap-5 px-10 py-2 bg-gray-100 w-fit rounded-lg">
         <button
           type="button"
-          onClick={() => {}}
+          onClick={() => decreaseQuantity(item.id)}
+          disabled={desableDecreaseButton}
+          className='disabled:opacity-20'
         >
             <MinusIcon className="h-6 w-6"/>
         </button>
@@ -37,7 +50,10 @@ export default function ProductDetails({item}:ProductDetailsProps) {
 
         <button
            type="button"
-           onClick={() => {}}
+           onClick={() => increaseQuantity(item.id)}
+           className='disabled:opacity-10'
+           disabled={desableInCreaseButton}
+          
         >
             <PlusIcon className="h-6 w-6"/>
         </button>
