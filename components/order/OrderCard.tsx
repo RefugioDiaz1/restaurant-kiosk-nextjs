@@ -1,6 +1,6 @@
 "use client"
 import { completeOrder } from "@/actions/complete-order-action";
-import { OrderWithProducts } from "@/app/admin/orders/page";
+import { OrderWithProducts } from "@/src/types";
 import { formatCurrency } from "@/src/utils";
 import { toast } from "react-toastify";
 
