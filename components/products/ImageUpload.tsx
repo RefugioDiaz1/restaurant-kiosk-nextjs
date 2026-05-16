@@ -19,7 +19,7 @@ export default function ImageUpload({image} : ImageUploadProps) {
         if(result.event === 'success')
         {
             widget.close()
-            // @ts-ignore
+            // @ts-expect-error Cloudinary result type
             setImageUrl(result.info?.secure_url)
         }
     }}

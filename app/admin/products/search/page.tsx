@@ -3,7 +3,6 @@ import ProductTable from "@/components/products/ProductsTable";
 import GoBackButton from "@/components/ui/GoBackButton";
 import Heading from "@/components/ui/Heading";
 import { prisma } from "@/src/lib/prisma";
-import Link from "next/link";
 
 async function searchProducts(searchTerm: string) {
   const products = await prisma.product.findMany({

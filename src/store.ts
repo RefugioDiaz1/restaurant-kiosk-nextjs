@@ -21,7 +21,15 @@ export const useStore = create<Store>()(
       order: [],
       addToCart: (product) => {
         
-        const { categoryId, image, ...data } = product;
+        const data = {
+        id: product.id,
+        name: product.name,
+        price: product.price
+        }
+
+        // void _categoryId;
+        // void _image;  
+
         let order: OrderItem[] = [];
 
         if (get().order.find((item) => item.id === product.id)) {
