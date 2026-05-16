@@ -363,3 +363,41 @@ instalar toastify
 
 npm i react-toastify
 
+
+LO IDEAL ES USAR ZOD CON RHF, AQUI NO SE USO, SOLO ZOD, PERO LO ANOTO PARA CULQUIER CAMBIO A FUTURO
+
+zodResolver viene de esta librería:
+@hookform/resolvers
+
+npm install @hookform/resolvers
+
+EJ. 
+
+const {
+   register,
+   handleSubmit,
+   formState: { errors }
+} = useForm({
+   resolver: zodResolver(ProductSchema)
+})
+
+
+
+para las imagenes se recomienda cloudinary
+
+npm i next-cloudinary
+
+libreria para iconos
+
+npm i react-icons
+
+
+SWR
+
+es una herramienta desarrollada por los creadores de next.js y vercel 
+bastante similar a react query
+
+solo funciona en el cliente, y requiere endpoint de una api
+
+npm i swr
+
